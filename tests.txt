@@ -1,0 +1,33 @@
+x canary test
+
+Guesser:
+x scramble apple
+x scramble matter
+x scramble apple twice and expect different results
+x scramble an empty string
+x scramble a word with mixed cases and expect the result to have all letters in lowercase
+x result of scramble has same characters as the original string
+x score for a letter guess that is part of the word - "apple" and guess "a"
+x score for guess that is part of the word - word "monkey" and guess "monk"
+x score for guess that is part of the word but not continuous - word "apple" and guess "ape"
+x score for guess with no vowel - word "bayou" and guess "by" 
+x score for guess where it has letters not in word: "bayou" and guess "bye"
+x score for guess with repeat letters: "relate" and guess "rear"
+x score for word with incorrect spelling - "apple" and guess "app"
+x score for another word with incorrect spelling "apple" and guess "ael"
+x score for word with correct spelling, but the spell checker throws a runtime exception possibly due to a network error
+x pick a random word from a list of words
+x second pick from same list returns a different word
+x pick a random word from a list of words when the list is empty
+
+SpellCheckerService:
+x get response from the service URL and confirm a text was received
+x parse text "true" and return boolean true
+x parse text "false" and return boolean false
+x parse text "something else" and throws IllegalArgumentException
+x isSpellingCorrect should take a word and returns true for word "right"
+x isSpellingCorrect should take a word and returns false for word "rigth"
+x isSpellingCorrect should take a word and returns false for word "haha"
+x isSpellingCorrect handles exception from get response properly
+ (all the above tests for isSpellingCorrect do not use the real get response but a mock, the next one will use the real function)
+x an integration test for isSpellingCorrect that takes word "correct" and returns true
